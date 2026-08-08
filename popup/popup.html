@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Nutrition Label</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <nav class="demo-bar" aria-label="Modes">
+    <button id="liveBtn" class="demo-btn live active">Live: this site</button>
+    <button data-host="example-shop.co.uk" class="demo-btn">Demo: poor</button>
+    <button data-host="good-example.org" class="demo-btn">Demo: good</button>
+    <button data-host="__unavailable__" class="demo-btn">Demo: none</button>
+  </nav>
+
+  <div id="statusLine" class="status-line hidden"></div>
+
+  <header class="grade-banner" id="gradeBanner">
+    <div class="grade-dot" id="gradeDot" role="img"></div>
+    <div class="grade-text">
+      <span class="grade-host" id="gradeHost">-</span>
+      <span class="grade-word" id="gradeWord">Checking…</span>
+    </div>
+    <button id="reassessBtn" class="reassess hidden" title="Re-run the assessment">↻</button>
+  </header>
+
+  <section class="overview" id="overview" aria-label="Key issues"></section>
+
+  <main class="label-box" aria-label="Privacy facts">
+    <h1 class="label-title">Privacy Facts</h1>
+    <p class="label-sub" id="labelSub">Assessed against the same 6 criteria for every site</p>
+    <div class="label-divider thick"></div>
+    <ul class="criteria" id="criteria"></ul>
+    <p class="verify-line hidden" id="verifyLine"></p>
+  </main>
+
+  <button class="consent-btn" id="consentBtn">
+    I'm agreeing to this site's terms now - save a record of this version
+  </button>
+
+  <footer class="ai-notice">
+    This label is AI-generated and can make mistakes.
+    Tap any finding to see the exact policy wording it came from,
+    and verify anything important against the source.
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

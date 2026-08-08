@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Nutrition Label (Research Prototype)",
+  "version": "0.12.1",
+  "description": "AI-powered privacy nutrition labels for websites. Masters dissertation research prototype - assessments may contain mistakes, verify important information against the source policy.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "background": { "service_worker": "src/background.js", "type": "module" },
+  "options_page": "options/options.html",
+  "permissions": [ "activeTab", "storage", "scripting" ],
+  "host_permissions": [ "https://api.anthropic.com/*", "http://*/*", "https://*/*" ],
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

@@ -1,0 +1,154 @@
+:root {
+  --ink: #000;
+  --paper: #fff;
+  --hairline: #000;
+  --green: #1a7f37;
+  --amber: #b58900;
+  --red: #c11919;
+  --grey: #8a8a8a;
+  --notice-bg: #fff8e6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+
+  width: 432px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 10px;
+}
+
+.demo-bar { display: flex; gap: 4px; margin-bottom: 8px; }
+.demo-btn {
+  flex: 1; font-size: 10px; padding: 4px 2px; background: #f2f2f2;
+  border: 1px solid #ccc; cursor: pointer; font-family: inherit;
+}
+.demo-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.demo-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }
+
+.grade-banner {
+  display: flex; align-items: center; gap: 10px;
+  border: 2px solid var(--ink); padding: 8px 10px; margin-bottom: 8px;
+}
+.grade-dot {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--ink); flex-shrink: 0;
+}
+.grade-dot.green { background: var(--green); }
+.grade-dot.amber { background: var(--amber); }
+.grade-dot.red   { background: var(--red); }
+.grade-dot.unknown { background: var(--grey); }
+.grade-text { display: flex; flex-direction: column; line-height: 1.2; }
+.grade-host { font-size: 11px; letter-spacing: 0.02em; }
+.grade-word { font-size: 16px; font-weight: 800; text-transform: uppercase; }
+
+.overview { margin-bottom: 8px; display: flex; flex-direction: column; gap: 4px; }
+.overview-item {
+  font-size: 11.5px; line-height: 1.35; padding: 5px 8px;
+  border-left: 4px solid var(--red); background: #faf3f3;
+}
+.overview-item.amber { border-left-color: var(--amber); background: #faf7ec; }
+.overview-item.not_stated { border-left-color: var(--grey); background: #f4f4f4; }
+.overview-empty { font-size: 11.5px; padding: 5px 8px; border-left: 4px solid var(--green); background: #f2f8f3; }
+
+.label-box { border: 2.5px solid var(--ink); padding: 8px 10px; }
+.label-title {
+  font-size: 27px; font-weight: 900; letter-spacing: -0.03em;
+  font-stretch: condensed; text-transform: none;
+}
+.label-sub { font-size: 10px; padding: 2px 0 5px; }
+.label-divider.thick { border-top: 9px solid var(--ink); margin-bottom: 2px; }
+
+.criteria { list-style: none; }
+.criterion { border-bottom: 1px solid var(--hairline); padding: 6px 0; }
+.criterion:last-child { border-bottom: none; }
+
+.criterion-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  width: 100%; background: none; border: none; font-family: inherit;
+  font-size: 12.5px; font-weight: 700; text-align: left; cursor: pointer; color: var(--ink);
+}
+.criterion-row:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+.pill {
+  font-size: 9.5px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.05em; padding: 2px 7px; border-radius: 2px;
+  color: var(--paper); flex-shrink: 0;
+}
+.pill.green { background: var(--green); }
+.pill.amber { background: var(--amber); }
+.pill.red   { background: var(--red); }
+.pill.not_stated { background: var(--paper); color: var(--ink); border: 1.5px dashed var(--ink); }
+.pill.unavailable { background: var(--grey); }
+
+.criterion-body { font-size: 11.5px; line-height: 1.4; padding: 4px 0 0; }
+.criterion-body.hidden { display: none; }
+
+.low-confidence {
+  display: inline-block; font-size: 9.5px; font-weight: 700;
+  border: 1px solid var(--amber); color: var(--amber);
+  padding: 0 4px; margin-left: 4px; vertical-align: 1px;
+}
+
+.clause-toggle {
+  display: inline-block; background: none; border: none; padding: 0;
+  font-family: inherit; font-size: 10.5px; font-weight: 700;
+  text-decoration: underline; cursor: pointer; color: var(--ink); margin-top: 3px;
+}
+.clause {
+  font-size: 10.5px; line-height: 1.45; margin-top: 4px; padding: 6px 8px;
+  border-left: 3px solid var(--ink); background: #f7f7f7; font-style: italic;
+}
+.clause.hidden { display: none; }
+
+.friction-cover {
+  width: 100%; font-family: inherit; font-size: 11px; font-weight: 700;
+  padding: 7px; margin-top: 4px; cursor: pointer;
+  background: repeating-linear-gradient(45deg, #f3f3f3, #f3f3f3 6px, #e9e9e9 6px, #e9e9e9 12px);
+  border: 1.5px solid var(--ink);
+}
+.friction-cover:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+.consent-btn {
+  width: 100%; margin-top: 8px; padding: 8px; font-family: inherit;
+  font-size: 11px; font-weight: 700; cursor: pointer;
+  background: var(--paper); border: 2px solid var(--ink);
+}
+.consent-btn:disabled { opacity: 0.55; cursor: default; }
+
+.ai-notice {
+  margin-top: 8px; padding: 7px 9px; font-size: 10px; line-height: 1.45;
+  background: var(--notice-bg); border: 1px solid var(--amber);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .criterion-body, .clause { transition: opacity 120ms ease; }
+}
+
+.demo-btn.live { font-weight: 800; }
+.status-line {
+  font-size: 11px; padding: 6px 8px; margin-bottom: 8px;
+  border: 1.5px dashed #000; background: #fafafa; line-height: 1.4;
+}
+.status-line.error { border-color: var(--red); color: var(--red); }
+.status-line a { color: inherit; font-weight: 700; }
+.hidden { display: none; }
+.reassess {
+  margin-left: auto; background: none; border: 1.5px solid var(--ink);
+  font-size: 14px; width: 28px; height: 28px; cursor: pointer; flex-shrink: 0;
+}
+.verify-line { font-size: 10px; padding-top: 6px; border-top: 1px solid #000; margin-top: 4px; }
+
+.grade-dot.working { background: repeating-linear-gradient(45deg, #ddd, #ddd 4px, #bbb 4px, #bbb 8px); animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+.pill.scanning { background: var(--paper); color: var(--ink); border: 1.5px solid #999; animation: pulse 1.2s ease-in-out infinite; }
+
+.assess-cta {
+  width: 100%; padding: 14px 10px; margin: 6px 0; font-family: inherit;
+  font-size: 13px; font-weight: 800; cursor: pointer;
+  background: var(--paper); border: 2px solid var(--ink);
+}
+.assess-cta:hover { background: var(--ink); color: var(--paper); }
+.assess-cta.secondary { font-weight: 700; border-style: dashed; font-size: 11.5px; }
